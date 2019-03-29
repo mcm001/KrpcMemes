@@ -1,0 +1,46 @@
+plugins {
+    // id "edu.wpi.first.GradleRIO" version "2019.1.1"
+    id "java"
+}
+
+apply plugin: 'application'
+// mainClassName = 'pantryvisualizer.Visualizer'
+mainClassName = 'krpc.Main'
+
+// set JAVA_HOME = "/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/"
+
+// compileJava.options.fork = true
+compileJava.options.forkOptions.executable = "/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/bin/java"
+
+repositories {
+    mavenCentral()
+      maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+
+    compile files('libs/javatuples-1.2.jar')
+        compile files('libs/krpc-java-0.4.8.jar')
+            compile files('libs/protobuf-java-3.7.0.jar')
+
+
+  // compile wpi.deps.wpilib()
+  // compile wpi.deps.vendor.java()
+  // nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
+  // nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)
+
+  testCompileOnly(
+    'junit:junit:4.12'
+  )
+  testImplementation(
+    'org.junit.jupiter:junit-jupiter-api:5.1.0'
+  )
+  testRuntimeOnly(
+    'org.junit.jupiter:junit-jupiter-engine:5.1.0',
+    'org.junit.vintage:junit-vintage-engine:5.1.0'
+  )
+}
+
+test {
+  useJUnitPlatform()
+}
