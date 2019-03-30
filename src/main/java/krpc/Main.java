@@ -143,10 +143,18 @@ public class Main {
 
         var targetForwardSpeed = 0;
         var targetLateralSpeed = 0;
+        var maxForwardAngle = 20;
+        var maxTurnAngle = maxForwardAngle;
 
-        var forwardInput = (targetForwardSpeed - forwardSpeed) * 1;
-        System.out.println("Forward speed: " + forwardSpeed + " Forward input: " + forwardInput);
+        var forwardInput = (forwardSpeed - targetForwardSpeed) * 1;
+        forwardInput = Math.max(Math.min(forwardInput, maxForwardAngle), -maxForwardAngle);
+        // System.out.println("Forward speed: " + forwardSpeed + " Forward input: " + forwardInput);
         mAutopilot.setTargetPitch((float) forwardInput);
+
+        var rollInput = (targetLateralSpeed - lateralSpeed) * 0.2;
+        rollInput = Math.max(Math.min(rollInput, maxTurnAngle), -maxTurnAngle);
+        System.out.println("Roll angle: " + lateralSpeed + " Roll input: " + rollInput);
+        mAutopilot.setTargetRoll((float) rollInput);
 
 
         Thread.sleep((long) (1d / 60d));
