@@ -41,6 +41,8 @@ dependencies {
             compile files('libs/protobuf-java-3.8.0.jar')
 
 
+    compile 'org.ghrobotics.FalconLibrary:core:2019.5.25'
+
   // compile wpi.deps.wpilib()
   // compile wpi.deps.vendor.java()
   // nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
