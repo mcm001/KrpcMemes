@@ -24,11 +24,11 @@ abstract class AbstractCraft {
     // this is called periodically to update shit
     abstract fun update()
 
-    /**
-     * The home location in the surface reference frame (KSC runway), in the form (lat, lng)
-     */
-    var homeLocation = Translation2d(-74.7, -0.046)
-        protected set
+//    /**
+//     * The home location in the surface reference frame (KSC runway), in the form (lat, lng)
+//     */
+//    var homeLocation = Translation2d(-74.7, -0.046)
+//        protected set
 
     /**
      * Get the current position of the vessel in the surface reference frame
@@ -37,11 +37,11 @@ abstract class AbstractCraft {
     val globalLatLng: Translation2d
         get() = Translation2d(srfFlight.longitude, srfFlight.latitude)
 
-    /**
-     * @return the location relative to the homeLocation
-     */
-    val globalPose: Pose2d
-        get() = Pose2d(globalLatLng, srfFlight.heading.degree)
+//    /**
+//     * @return the location relative to the homeLocation
+//     */
+//    val globalPose: Pose2d
+//        get() = Pose2d(globalLatLng, srfFlight.heading.degree)
 
     var throttle
         get() = wrappedControl.throttle.toDouble()
@@ -53,6 +53,9 @@ abstract class AbstractCraft {
     val roll = srfFlight.roll.toDouble()
     val heading = srfFlight.heading.toDouble()
 
+    /**
+     * Get or set the autopilot pitch, heading, roll
+     */
     var direction
         get() = Translation3d(pitch, heading, roll) - directionOffset
         set(value) {

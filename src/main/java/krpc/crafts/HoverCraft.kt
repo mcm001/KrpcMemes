@@ -19,6 +19,8 @@ object HoverCraft : AbstractCraft() {
 
     var targetAltitude = 200
 
+    val surfaceAltitude get() = srfFlight.surfaceAltitude
+
     val whackyVelocityReferenceFrame = wrappedVessel.flight(SpaceCenter.ReferenceFrame.createHybrid(
             connecc,
             wrappedVessel.orbit.body.referenceFrame,
@@ -28,15 +30,15 @@ object HoverCraft : AbstractCraft() {
 
     override fun update() {
 
-        autoPilotEngaged = true
-
-        val newThrottle = calculateThrottle()
-        throttle = newThrottle
-
-        calculateLateralVelocities(midRunayLocation, globalPose)
-
-        val newDirection = calculateDirection(0.0, 0.0)
-        direction = newDirection
+//        autoPilotEngaged = true
+//
+//        val newThrottle = calculateThrottle()
+//        throttle = newThrottle
+//
+//        calculateLateralVelocities(midRunayLocation, globalPose)
+//
+//        val newDirection = calculateDirection(0.0, 0.0)
+//        direction = newDirection
 
     }
 
