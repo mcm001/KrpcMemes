@@ -92,6 +92,11 @@ public class TrapezoidProfile {
     }
 
     @Override
+    public String toString() {
+      return "position " + position + " velocity " + velocity;
+    }
+
+    @Override
     public int hashCode() {
       return Objects.hash(position, velocity);
     }

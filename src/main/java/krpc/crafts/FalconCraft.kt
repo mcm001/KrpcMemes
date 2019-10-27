@@ -25,6 +25,8 @@ object FalconCraft : AbstractCraft() {
 
     val surfaceAltitude get() = srfFlight.surfaceAltitude
 
+    val verticalVelcoity get() = srfFlight.verticalSpeed
+
     fun setGear(wantsDeployed: Boolean) {
         wrappedControl.gear = wantsDeployed
     }

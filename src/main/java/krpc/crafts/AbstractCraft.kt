@@ -5,6 +5,7 @@ import krpc.client.services.SpaceCenter
 import org.ghrobotics.lib.mathematics.threedim.geometry.Translation3d
 import org.ghrobotics.lib.mathematics.twodim.geometry.Pose2d
 import org.ghrobotics.lib.mathematics.twodim.geometry.Translation2d
+import org.ghrobotics.lib.mathematics.units.kilo
 import org.javatuples.Triplet
 import kotlin.properties.Delegates
 
@@ -25,7 +26,9 @@ abstract class AbstractCraft {
 
     val twr: Double get() = (wrappedVessel.maxThrust / wrappedVessel.mass / 9.80655)
 
-    val maxThrust = wrappedVessel.maxThrust /* newtons */
+    val maxThrust = wrappedVessel.maxThrust.toDouble()
+
+    val mass = wrappedVessel.mass.toDouble() // kg
 
 //    /**
 //     * The home location in the surface reference frame (KSC runway), in the form (lat, lng)

@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58de297b-f50c-426c-a820-29351a33023e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/wpi/TrapezoidProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/KrpcMemes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/KrpcMemes.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/KrpcMemes.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/KrpcMemes.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/KrpcMemes.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/KrpcMemes.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/krpc/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/krpc/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/krpc/Util.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/krpc/Util.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/krpc/crafts/AbstractCraft.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/krpc/crafts/AbstractCraft.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/krpc/crafts/HoverCraft.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/krpc/crafts/FalconCraft.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/krpc/crafts/FalconCraft.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/krpc/crafts/FalconCraft.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/krpc/routines/LiftoffRoutine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/krpc/routines/LiftoffRoutine.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/krpc/routines/RoutineManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/krpc/routines/RoutineManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wpi/TrapezoidProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wpi/TrapezoidProfile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
