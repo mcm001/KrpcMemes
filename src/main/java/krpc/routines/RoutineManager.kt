@@ -1,11 +1,14 @@
 package krpc.routines
 
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+
 object RoutineManager {
 
     val liftoffRoutine = LiftoffRoutine()
 
     fun start() {
-        Thread(this::routine).start()
+        routine()
     }
 
     fun routine() {
@@ -14,3 +17,5 @@ object RoutineManager {
     }
 
 }
+
+fun main() = RoutineManager.routine()

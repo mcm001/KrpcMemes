@@ -10,16 +10,24 @@ import krpc.rounded
 import org.ghrobotics.lib.mathematics.threedim.geometry.Translation3d
 import org.ghrobotics.lib.mathematics.twodim.geometry.Pose2d
 import org.ghrobotics.lib.mathematics.twodim.geometry.Translation2d
-import org.ghrobotics.lib.mathematics.units.Rotation2d
-import org.ghrobotics.lib.mathematics.units.degree
+import org.ghrobotics.lib.mathematics.units.derived.degree
+import org.ghrobotics.lib.mathematics.units.derived.toRotation2d
+import org.ghrobotics.lib.mathematics.units.meter
 
-object HoverCraft : AbstractCraft() {
+
+object FalconCraft : AbstractCraft() {
+    override fun update() {
+    }
 
     private const val MAX_VERT_SPEED: Double = 10.0
 
     var targetAltitude = 200
 
     val surfaceAltitude get() = srfFlight.surfaceAltitude
+
+    fun setGear(wantsDeployed: Boolean) {
+        wrappedControl.gear = wantsDeployed
+    }
 
     val whackyVelocityReferenceFrame = wrappedVessel.flight(SpaceCenter.ReferenceFrame.createHybrid(
             connecc,
@@ -28,20 +36,6 @@ object HoverCraft : AbstractCraft() {
             wrappedVessel.orbit.body.referenceFrame,
             wrappedVessel.orbit.body.referenceFrame))
 
-    override fun update() {
-
-//        autoPilotEngaged = true
-//
-//        val newThrottle = calculateThrottle()
-//        throttle = newThrottle
-//
-//        calculateLateralVelocities(midRunayLocation, globalPose)
-//
-//        val newDirection = calculateDirection(0.0, 0.0)
-//        direction = newDirection
-
-    }
-
     private fun calculateLateralVelocities(targetLocation: Translation2d, currentLocation: Pose2d) {
 
         val error = (targetLocation - currentLocation.translation)
@@ -49,7 +43,7 @@ object HoverCraft : AbstractCraft() {
 //        print("error ${error.x}, ${error.y} ")
 
         // borrowed from the Translation2d constructor using a heading and magnitude
-        val rotatedError = error.rotateBy(currentLocation.rotation + 90.degree) // because we want
+        val rotatedError = error.rotateBy(currentLocation.rotation + 90.degree.toRotation2d()) // because we want
         // the new reference frame to be X axis forward
 
         println("rotated error ${rotatedError.x}, ${rotatedError.y}")
@@ -88,9 +82,6 @@ object HoverCraft : AbstractCraft() {
     }
 
 }
-
-val midRunayLocation = Translation2d(-74.6, -0.046)
-
 
 const val kVerticalVelocityKp = 0.2
 const val kVerticalPositionKp = 1

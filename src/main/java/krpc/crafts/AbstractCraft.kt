@@ -5,7 +5,6 @@ import krpc.client.services.SpaceCenter
 import org.ghrobotics.lib.mathematics.threedim.geometry.Translation3d
 import org.ghrobotics.lib.mathematics.twodim.geometry.Pose2d
 import org.ghrobotics.lib.mathematics.twodim.geometry.Translation2d
-import org.ghrobotics.lib.mathematics.units.degree
 import org.javatuples.Triplet
 import kotlin.properties.Delegates
 
@@ -24,6 +23,10 @@ abstract class AbstractCraft {
     // this is called periodically to update shit
     abstract fun update()
 
+    val twr: Double get() = (wrappedVessel.maxThrust / wrappedVessel.mass / 9.80655)
+
+    val maxThrust = wrappedVessel.maxThrust /* newtons */
+
 //    /**
 //     * The home location in the surface reference frame (KSC runway), in the form (lat, lng)
 //     */
@@ -34,8 +37,8 @@ abstract class AbstractCraft {
      * Get the current position of the vessel in the surface reference frame
      * Longitude (left/right on the globe) is on the x axis, and latitude is on the y axis
      */
-    val globalLatLng: Translation2d
-        get() = Translation2d(srfFlight.longitude, srfFlight.latitude)
+    val globalLatLng: Pair<Double, Double>
+        get() = (srfFlight.longitude to srfFlight.latitude)
 
 //    /**
 //     * @return the location relative to the homeLocation

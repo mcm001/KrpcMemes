@@ -2,22 +2,10 @@ package krpc
 
 import java.io.IOException
 
-import krpc.client.Connection
 import krpc.client.RPCException
-import krpc.client.Stream
 import krpc.client.StreamException
-import krpc.client.services.SpaceCenter
-import krpc.client.services.SpaceCenter.ControlInputMode
-import krpc.client.services.SpaceCenter.Flight
-import krpc.client.services.SpaceCenter.ReferenceFrame
-import krpc.client.services.SpaceCenter.Resources
-import krpc.client.services.SpaceCenter.SASMode
-import krpc.crafts.HoverCraft
+import krpc.crafts.FalconCraft
 import krpc.routines.RoutineManager
-import org.ghrobotics.lib.mathematics.twodim.geometry.Pose2d
-import org.ghrobotics.lib.mathematics.twodim.geometry.Translation2d
-import org.javatuples.Triplet
-
 
 
 object Main {
@@ -27,12 +15,13 @@ object Main {
     @JvmStatic
     fun main(args: Array<String>) {
 
-        val craft = HoverCraft
+        val craft = FalconCraft
+
+        RoutineManager.start()
 
         while (true) {
 //            craft.update()
 //            Thread.sleep((1.0 / 40.0).toLong())
-            RoutineManager.start()
         }
     }
 

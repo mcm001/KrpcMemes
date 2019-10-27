@@ -31,3 +31,5 @@ build/*
 *.values
 *.xml
 *.xml
+.gradle/*
+.idea/*

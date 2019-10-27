@@ -1,7 +1,7 @@
 package krpc
 
+import org.ghrobotics.lib.mathematics.twodim.geometry.Rotation2d
 import org.ghrobotics.lib.mathematics.twodim.geometry.Translation2d
-import org.ghrobotics.lib.mathematics.units.Rotation2d
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
